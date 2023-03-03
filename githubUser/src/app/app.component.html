@@ -1,0 +1,12 @@
+<div class="container">
+  <app-search (onEnter)="search($event)" />
+</div>
+
+<div *ngIf="existError" class="alert alert-danger">
+  No se encontro nada con el termino {{ userName }}
+</div>
+
+
+<div *ngIf="!existError && user?.id" class="center">
+  <app-card [user]="user" />
+</div>

@@ -1,0 +1,11 @@
+<div class="search-container">
+  <form [formGroup]="userForm" (ngSubmit)="searchUser()">
+    <div class="input-wrapper">
+      <input type="text" placeholder="Buscar usurio en GitHub..." formControlName="userName">
+      <i class="fa fa-search search-icon"></i>
+    </div>
+    <span class="alert" *ngIf="userForm.get('userName')?.hasError('required') && userForm.get('userName')?.touched">Debe ingresar un
+      Usuario</span>
+    <!-- <button class="myButton" type="submit" [disabled]="userForm.invalid">Buscar</button> -->
+  </form>
+</div>
